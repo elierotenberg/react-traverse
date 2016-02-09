@@ -236,7 +236,7 @@
     "object-shorthand": 1, // (see Babel section) require method and property shorthand syntax for object literals
     "prefer-arrow-callback": 1, //suggest using arrow functions as callbacks
     "prefer-const": 1, //suggest using const declaration for variables that are never modified after declared
-    "prefer-reflect": 1, //suggest using Reflect methods where applicable
+    "prefer-reflect": [2, { exceptions: ["apply", "call"] }], //suggest using Reflect methods where applicable
     "prefer-spread": 1, //suggest using the spread operator instead of .apply().
     "prefer-template": 1, //suggest using template literals instead of strings concatenation
     "require-yield": 1, //disallow generator functions that do not have yield
@@ -271,7 +271,7 @@
     "react/no-did-mount-set-state": 1, //Prevent usage of setState in componentDidUpdate
     "react/no-did-update-set-state": 1, //Prevent usage of setState in componentDidUpdate
     "react/no-direct-mutation-state": 1, //Prevent direct mutation of this.state
-    "react/no-multi-comp": 1, //Prevent multiple component definition per file
+    "react/no-multi-comp": 0, //Prevent multiple component definition per file
     "react/no-set-state": 0, //Prevent usage of setState
     "react/no-unknown-property": 1, //Prevent usage of unknown DOM property
     "react/prefer-es6-class": 1, //Use ES6 Class instead of Reacy.createClass
