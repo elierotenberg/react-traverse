@@ -79,6 +79,7 @@
     "react-dom": "^0.14.7",
     "rimraf": "^2.5.0",
     "run-sequence": "^1.1.5",
+    "sha1": "^1.1.1",
     "should": "^8.1.1",
     "source-map-support": "^0.4.0",
     "through2": "^2.0.0"
