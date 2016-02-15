@@ -83,9 +83,7 @@ function Bar() {
   </div>;
 }
 
-const TransformedBar = transformComponents(
-  (component) => wrapRender(replaceDivsWithSpans)(component)
-)(Bar);
+const TransformedBar = transformComponents(wrapRender(replaceDivsWithSpans))(Bar);
 
 // <TransformedBar /> will render as:
 <span>
@@ -94,6 +92,27 @@ const TransformedBar = transformComponents(
 </span>
 ```
 
+For convenience, you can use `transformComponents` on components classes (created using `extends React.Component`), on
+stateless function components, or directly on React Elements:
+
+```js
+const transform = transformComponents(wrapRender(replaceDivsWithSpans));
+// decorator
+@transform
+class Foo extends React.Component { ... }
+
+// stateless function
+const Foo = transform(
+  () => <div>This is foo.</div>
+);
+
+// directly on a ReactElement, eg. in a ReactDOM.render call
+ReactDOM.render(transform(
+  <div>
+    <Foo />
+  </div>
+));
+```
 
 ### Node visitor
 
