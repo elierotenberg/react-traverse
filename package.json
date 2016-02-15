@@ -1,6 +1,6 @@
 {
   "name": "react-traverse",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Nodes and Components Traversal",
   "main": "dist/node/prod/lib/index.js",
   "browser": "dist/browser/lib/app/index.js",
