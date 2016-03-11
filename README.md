@@ -32,7 +32,7 @@ const replaceDivsWithSpans = (node) => traverse(node, {
 
 replaceDivsWithSpans(<div>This is a span.</div>)
 // will render as:
-<span>This is a div.</span>
+<span>This is a span.</span>
 ```
 
 See the full traversal API below.
