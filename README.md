@@ -1,6 +1,12 @@
 react-traverse
 ==============
 
+This is a simplified fork of https://github.com/elierotenberg/react-traverse.
+
+```
+yarn add react-traverse
+```
+
 `react-traverse` applies the principle of tree traversal to the two kinds of trees present in a React hierarchy:
 React **nodes** and React **components**.
 
@@ -143,3 +149,14 @@ A visitor is passed a single object, `path`, which has the following properties:
 Calls to `transformComponents(transformComponent)(component)` are memoized using a `WeakMap` to avoid allocating
 zillions of closures every time the app is rendered. This assumes `transformComponent` itself is pure (stateless) and
 `component` is immutable. This should be the case unless you're doing something very wrong.
+
+### Tests
+To test.
+`yarn tests`
+
+### Publish
+To publish to NPM (pending getting private NPM repo)
+```
+npm run build
+yarn publish
+```

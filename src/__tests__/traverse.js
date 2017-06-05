@@ -8,9 +8,6 @@ import traverse from '..';
 describe('traverse', () => {
   it('capitalize all text', () => {
     class Foo extends React.Component {
-      static propTypes = {
-        children: React.PropTypes.node,
-      };
       render() {
         return (
           <div>
@@ -27,7 +24,7 @@ describe('traverse', () => {
       );
     }
     Bar.propTypes = {
-      children: React.PropTypes.node,
+      children: React.PropTypes.node
     };
     const original = (
       <ul>
@@ -50,7 +47,7 @@ describe('traverse', () => {
           return path.node.toUpperCase();
         }
         return path.node;
-      },
+      }
     });
     const expected = (
       <ul>
@@ -71,8 +68,6 @@ describe('traverse', () => {
         </li>
       </ul>
     );
-    should(ReactDOMServer.renderToStaticMarkup(traversed)).be.exactly(
-      ReactDOMServer.renderToStaticMarkup(expected),
-    );
+    should(ReactDOMServer.renderToStaticMarkup(traversed)).be.exactly(ReactDOMServer.renderToStaticMarkup(expected));
   });
 });

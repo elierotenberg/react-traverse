@@ -14,20 +14,22 @@ export default function wrapRender(transformNode) {
         type,
         (() => {
           if (isStatelessComponent(type)) {
-            return class extends React.Component {
-              static displayName = type.displayName || type.name;
-              static propTypes = type.propTypes;
+            const klass = class extends React.Component {
               render() {
                 return transformNode(type(this.props));
               }
             };
+
+            klass.displayName = type.displayName || type.name;
+            klass.propTypes = type.propTypes;
+            return klass;
           }
           return class extends type {
             render() {
               return transformNode(super.render());
             }
           };
-        })(),
+        })()
       );
     }
     return memo.get(type);
