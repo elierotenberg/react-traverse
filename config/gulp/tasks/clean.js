@@ -14,11 +14,13 @@ const dist = path.join(
 
 export default () => {
   const platforms = Object.keys(babelConfig);
-  platforms.forEach((platform) => {
+  platforms.forEach(platform => {
     const envs = Object.keys(babelConfig[platform]);
-    envs.forEach((env) =>
-      gulp.task(`clean-${platform}-${env}`, (cb) => rimraf(path.join(dist, platform, env), cb))
+    envs.forEach(env =>
+      gulp.task(`clean-${platform}-${env}`, cb =>
+        rimraf(path.join(dist, platform, env), cb),
+      ),
     );
   });
-  gulp.task('clean', (cb) => rimraf(dist, cb));
+  gulp.task('clean', cb => rimraf(dist, cb));
 };

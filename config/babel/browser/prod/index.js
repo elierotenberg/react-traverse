@@ -2,10 +2,13 @@ module.exports = {
   plugins: [
     'babel-plugin-syntax-async-generators',
     'babel-plugin-syntax-trailing-function-commas',
-    ['babel-plugin-transform-async-to-module-method', {
-      'module': 'bluebird',
-      'method': 'coroutine',
-    }],
+    [
+      'babel-plugin-transform-async-to-module-method',
+      {
+        module: 'bluebird',
+        method: 'coroutine',
+      },
+    ],
     'babel-plugin-transform-class-constructor-call',
     'babel-plugin-transform-class-properties',
     'babel-plugin-transform-decorators-legacy',

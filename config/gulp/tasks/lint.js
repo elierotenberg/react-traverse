@@ -15,9 +15,10 @@ const app = path.join(
 const exts = ['js', 'jsx'];
 
 export default () =>
-  gulp.task('lint', () => gulp.src(exts.map((ext) => path.join(app, `.${ext}`)))
-    .pipe(plumber())
-    .pipe(eslint())
-    .pipe(eslint.format())
-  )
-;
+  gulp.task('lint', () =>
+    gulp
+      .src(exts.map(ext => path.join(app, `.${ext}`)))
+      .pipe(plumber())
+      .pipe(eslint())
+      .pipe(eslint.format()),
+  );

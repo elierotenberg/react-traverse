@@ -39,9 +39,12 @@ module.exports = {
     // 'babel-plugin-transform-es2015-typeof-symbol',
     'babel-plugin-transform-es2015-unicode-regex',
     ['babel-plugin-transform-es2015-modules-commonjs', { loose: true }],
-    ['babel-plugin-transform-async-to-module-method', {
-      'module': 'bluebird',
-      'method': 'coroutine',
-    }],
+    [
+      'babel-plugin-transform-async-to-module-method',
+      {
+        module: 'bluebird',
+        method: 'coroutine',
+      },
+    ],
   ],
 };
