@@ -1,6 +1,6 @@
 {
   "name": "@simple-contacts/react-traverse",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "React Nodes and Components Traversal",
   "main": "dist/index.js",
   "scripts": {
