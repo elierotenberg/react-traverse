@@ -1,14 +1,14 @@
 react-traverse
 ==============
 
-This is a simplified fork of https://github.com/elierotenberg/react-traverse.
-
-```
-yarn add react-traverse
-```
-
 `react-traverse` applies the principle of tree traversal to the two kinds of trees present in a React hierarchy:
 React **nodes** and React **components**.
+
+### Install
+```
+npm install react-traverse
+yarn add react-traverse
+```
 
 ### React **node** traversal
 
@@ -153,10 +153,3 @@ zillions of closures every time the app is rendered. This assumes `transformComp
 ### Tests
 To test.
 `yarn tests`
-
-### Publish
-To publish to NPM (pending getting private NPM repo)
-```
-npm run build
-yarn publish
-```

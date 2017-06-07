@@ -1,9 +1,11 @@
-const { describe, it } = global;
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOMServer from 'react-dom/server';
 import should from 'should/as-function';
 
 import traverse from '..';
+
+const { describe, it } = global;
 
 describe('traverse', () => {
   it('capitalize all text', () => {
@@ -24,7 +26,7 @@ describe('traverse', () => {
       );
     }
     Bar.propTypes = {
-      children: React.PropTypes.node
+      children: PropTypes.node,
     };
     const original = (
       <ul>
@@ -47,7 +49,7 @@ describe('traverse', () => {
           return path.node.toUpperCase();
         }
         return path.node;
-      }
+      },
     });
     const expected = (
       <ul>
@@ -68,6 +70,8 @@ describe('traverse', () => {
         </li>
       </ul>
     );
-    should(ReactDOMServer.renderToStaticMarkup(traversed)).be.exactly(ReactDOMServer.renderToStaticMarkup(expected));
+    should(ReactDOMServer.renderToStaticMarkup(traversed)).be.exactly(
+      ReactDOMServer.renderToStaticMarkup(expected),
+    );
   });
 });

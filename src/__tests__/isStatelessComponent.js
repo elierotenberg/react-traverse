@@ -1,8 +1,8 @@
-const { describe, it } = global;
 import React from 'react';
 import should from 'should/as-function';
-
 import { isStatelessComponent } from '..';
+
+const { describe, it } = global;
 
 describe('isStatelessComponent', () => {
   function RegularFunctionComponent() {

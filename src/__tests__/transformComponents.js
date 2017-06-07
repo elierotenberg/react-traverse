@@ -1,10 +1,11 @@
-const { describe, it } = global;
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import sha1 from 'sha1';
 import should from 'should/as-function';
 
 import traverse, { transformComponents, wrapRender } from '..';
+
+const { describe, it } = global;
 
 describe('transformComponents', () => {
   describe('replaces divs with spans', () => {

@@ -1,9 +1,10 @@
-const { describe, it } = global;
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import should from 'should/as-function';
 
 import traverse, { wrapRender } from '..';
+
+const { describe, it } = global;
 
 describe('wrapRender', () => {
   function wrapFoo(node) {
