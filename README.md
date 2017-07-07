@@ -6,8 +6,8 @@ React **nodes** and React **components**.
 
 ### Install
 ```
-npm install react-traverse
-yarn add react-traverse
+npm install @simple-contacts/react-traverse
+yarn add @simple-contacts/react-traverse
 ```
 
 ### React **node** traversal
