@@ -33,7 +33,7 @@
     "should": "^11.2.1"
   },
   "dependencies": {
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.6.1"
   },
   "lint-staged": {
     "*.js": [
