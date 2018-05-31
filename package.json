@@ -1,6 +1,6 @@
 {
   "name": "@simple-contacts/react-traverse",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Nodes and Components Traversal",
   "main": "dist/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
+    "babel-cli": "6.26.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "^8.2.3",
     "babel-plugin-react-display-name": "^2.0.0",
