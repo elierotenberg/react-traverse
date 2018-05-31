@@ -28,6 +28,9 @@ describe('traverse', () => {
     Bar.propTypes = {
       children: PropTypes.node,
     };
+    Bar.defaultProps = {
+      children: undefined,
+    };
     const original = (
       <ul>
         <li>{'foo'}</li>
