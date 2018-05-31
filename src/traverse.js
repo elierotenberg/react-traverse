@@ -53,9 +53,9 @@ export default function traverse(node, visitor) {
       return traverse(childNode, childVisitor);
     },
     traverseChildren(childVisitor = visitor) {
-      return React.Children
-        .toArray(path.node.props.children)
-        .map(childNode => path.traverse(childNode, childVisitor));
+      return React.Children.toArray(path.node.props.children).map(childNode =>
+        path.traverse(childNode, childVisitor),
+      );
     },
     visitor,
   };

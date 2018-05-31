@@ -29,7 +29,7 @@ export default function wrapRender(transformNode) {
               return transformNode(super.render());
             }
           };
-        })()
+        })(),
       );
     }
     return memo.get(type);

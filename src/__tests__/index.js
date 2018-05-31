@@ -13,7 +13,7 @@ describe('sanity', () => {
     const inst = new ComplexClass(TEN);
     should(inst).be.an.instanceOf(ComplexClass);
     should(inst.v).be.exactly(TEN);
-    const multiplyByFortyFive = inst.multiplyByFortyFive;
+    const { multiplyByFortyFive } = inst;
     should(multiplyByFortyFive()).be.exactly(TEN * THIRTYFIVE);
     should(ComplexClass.multiplyByFortyFive(TEN)).be.exactly(TEN * THIRTYFIVE);
   });
