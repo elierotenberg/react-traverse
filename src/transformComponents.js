@@ -14,29 +14,31 @@ export function transformComponentsInNode(node, transformComponent) {
 
 const transformComponentsMemo = new WeakMap();
 export default function transformComponents(transformComponent) {
-  if(!transformComponentsMemo.has(transformComponent)) {
+  if (!transformComponentsMemo.has(transformComponent)) {
     transformComponentsMemo.set(transformComponent, new WeakMap());
   }
-  const transformComponentMemo = transformComponentsMemo.get(transformComponent);
-  return (type) => {
-    if(typeof type === 'string') {
+  const transformComponentMemo = transformComponentsMemo.get(
+    transformComponent,
+  );
+  return type => {
+    if (typeof type === 'string') {
       return type;
     }
-    if(!transformComponentMemo.has(type)) {
-      if(React.isValidElement(type)) {
+    if (!transformComponentMemo.has(type)) {
+      if (React.isValidElement(type)) {
         transformComponentMemo.set(
           type,
-          React.createElement(transformComponents(transformComponent)(() => type)),
+          React.createElement(
+            transformComponents(transformComponent)(() => type),
+          ),
         );
-      }
-      else {
+      } else {
         transformComponentMemo.set(
           type,
           transformComponent(
-            wrapRender(
-              (node) => transformComponentsInNode(
-                node,
-                (childType) => transformComponents(transformComponent)(childType),
+            wrapRender(node =>
+              transformComponentsInNode(node, childType =>
+                transformComponents(transformComponent)(childType),
               ),
             )(type),
           ),
