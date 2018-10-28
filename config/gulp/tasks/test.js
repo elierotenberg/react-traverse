@@ -3,6 +3,7 @@ import mocha from 'gulp-mocha';
 import path from 'path';
 import through2 from 'through2';
 import runSequence from 'run-sequence';
+import bluebird from 'bluebird';
 
 import babelConfig from '../../babel';
 
