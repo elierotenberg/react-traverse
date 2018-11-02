@@ -2,8 +2,7 @@
   "name": "react-traverse",
   "version": "0.0.3",
   "description": "React Nodes and Components Traversal",
-  "main": "dist/node/prod/lib/index.js",
-  "browser": "dist/browser/lib/app/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "babel ./lib --out-dir dist --ignore lib/__tests__/",
     "test": "gulp test"
